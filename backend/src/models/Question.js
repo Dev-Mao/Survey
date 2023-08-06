@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const optionSchema = new mongoose.Schema({
   letter: String,
@@ -13,6 +13,6 @@ const questionSchema = new mongoose.Schema({
   correct: String,
 });
 
-const Question = mongoose.model('Question', questionSchema);
+const Question = mongoose.model("Question", questionSchema);
 
 module.exports = Question;
