@@ -1,0 +1,11 @@
+.resultsContainer{ width: 60%;
+    align-self: center;
+    color: white;
+    background-color: rgb(56, 56, 56, 0.9);
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    font-size: 1.2rem;
+    gap: 20px;
+}

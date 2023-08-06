@@ -1,0 +1,53 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.inputLoginContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.errorMessage{
+    color :rgb(172, 56, 56);
+    margin:0;
+}
+
+.input{
+    height: 40px;
+    padding: 0 10px;
+    background-color: rgb(255, 255, 255, 0);
+    border: none;
+    border-bottom: 1px solid rgb(38, 225, 0);
+    color: rgb(176, 176, 176);
+}
+
+.label {
+    font-size:.9rem;
+    color: rgb(255, 255, 255);
+}
+
+.button{
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover{
+    background-color: rgb(30, 183, 0);
+    transition: 0.1s;
+}
+
+.span{
+    color: white;
+    text-align: center;
+}
+
+.a{
+    text-decoration: none;
+    color:  rgb(38, 225, 0);
+    font-weight: bold;
+}

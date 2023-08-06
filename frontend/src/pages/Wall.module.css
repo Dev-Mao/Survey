@@ -1,0 +1,133 @@
+.background {
+    height: 100vh;;
+    background-image: url('../assets/images/background5.jpg');
+    background-size: cover;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+.containerCards{
+    height: 89vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnLogout{
+    align-self: end;
+    margin: 20px;
+    width: 15%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.btnLogout:hover{
+    border: 3px solid rgb(38, 225, 0);
+}
+.container, .containerFinal{
+    width: 60%;
+    align-self: center;
+    color: white;
+    background-color: rgb(56, 56, 56, 0.9);
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.buttons{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    font-weight: bold;
+    font-size: 15px;
+    align-items: end;
+    justify-content: center;
+    margin-left: 20px;
+    margin-left: 80%;
+}
+.btnGo{
+    background-color: transparent;
+    border: none;
+    color:black;
+    font-size: 2rem;
+    font-family: 'Creepster', cursive;
+}
+
+.imageBtn{
+    width:100%;
+}
+strong{
+    font-family: 'Creepster', cursive;
+    font-size: 1.3rem;
+    color:black;
+}
+.btnGo:hover{
+    color:rgb(38, 225, 0);
+}
+.strongGreen{
+    color:rgb(38, 225, 0); 
+}
+
+.icon{
+    font-size: 3rem;
+    margin: 0 10px;
+}
+@media (min-width: 860px){
+    .container{
+        flex-direction: row;
+        padding: 2%;
+    }
+    .containerFinal{
+        align-items: center;
+    }
+    .buttons{
+        width: 15%;
+        margin-left: 15px;
+        align-items: center;
+    }
+    .imageBtn{
+        width:100%;
+    }
+    .btnLogout{
+        width: 10%;        
+    }
+    .buttonsPrevious{
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        width: 15%;
+        margin-right: 15px;
+        font-weight: bold;
+        font-size: 15px;
+        align-items: start;
+        justify-content: center;         
+    }
+}
+
+@media (max-width: 860px){
+    .buttonsPrevious{
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        font-size: 15px;
+        justify-content: end;
+        align-items: start;
+        position: absolute;
+        width: 17%;   
+        bottom: 5%;
+        left: 7%;
+    }
+}
+
