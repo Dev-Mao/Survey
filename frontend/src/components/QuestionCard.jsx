@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import styles from "./QuestionCard.module.css"
+import styles from "./QuestionCard.module.css";
 const QuestionCard = (props) => {
   const [userAnswer, setUserAnswer] = useState("");
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
@@ -14,7 +14,7 @@ const QuestionCard = (props) => {
 
   // Función para guardar la opción seleccionada por el usuario
   const handleSelectOption = (answer, index) => {
-      if (userAnswer === answer) {
+    if (userAnswer === answer) {
       setUserAnswer("");
       setSelectedOptionIndex(null);
     } else {
@@ -25,31 +25,55 @@ const QuestionCard = (props) => {
 
   // Función para mostrar los resultados
   const handleShowResults = () => {
+    const email = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+    fetch(`http://localhost:3000/api/users/${email}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ newResult: props.points }),
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     props.setShowResults(true);
   };
   return (
     <div className={styles.cardQuestion}>
       <span className={styles.questionText}>{props.question.questionText}</span>
-        {props.question.img && (
-          <img
-            src={props.question.img}
-            alt={props.question.questionText}
-            className={styles.questionImg}
-          />
-        )}
+      {props.question.img && (
+        <img
+          src={props.question.img}
+          alt={props.question.questionText}
+          className={styles.questionImg}
+        />
+      )}
       <div className={styles.optionsContainer}>
         {/* Mostrar las opciones de respuesta */}
         {props.question.options.map((option, index) => (
           <div
-          className={`${styles.option} ${
-            userAnswer === option.letter && selectedOptionIndex === index ? styles.selected : ""
-          }`}
-          key={option._id}
-          onClick={() => handleSelectOption(option.letter, index)}
-        >
-          <span  className={styles.optionsText}>{option.text}</span>
-          {option.imageUrl && <img className={styles.optionsImg} src={option.imageUrl} alt={option.text} />}
-        </div>
+            className={`${styles.option} ${
+              userAnswer === option.letter && selectedOptionIndex === index
+                ? styles.selected
+                : ""
+            }`}
+            key={option._id}
+            onClick={() => handleSelectOption(option.letter, index)}
+          >
+            <span className={styles.optionsText}>{option.text}</span>
+            {option.imageUrl && (
+              <img
+                className={styles.optionsImg}
+                src={option.imageUrl}
+                alt={option.text}
+              />
+            )}
+          </div>
         ))}
       </div>
       {props.currentIndexQuestion === props.questions.length - 1 ? (

@@ -1,10 +1,12 @@
-*{
+* {
     font-family: 'Rajdhani', sans-serif;
 }
-button{
+
+button {
     cursor: pointer;
 }
-button:hover{
+
+button:hover {
     transform: scale(1.05);
     transition: 0.1s;
 }

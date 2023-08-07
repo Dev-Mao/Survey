@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import QuestionCard from "../components/QuestionCard";
 import Results from "../components/Results";
-import Logout from "../components/Logout";
+import NavBar from "../components/NavBar";
 import styles from "./Wall.module.css";
-import Next from "../assets/images/zombieNext.png"
-import Previous from "../assets/images/zombiPrevious.png"
-import {GiRaiseZombie} from 'react-icons/gi'
+import Next from "../assets/images/zombieNext.png";
+import Previous from "../assets/images/zombiPrevious.png";
+import { GiRaiseZombie } from "react-icons/gi";
+import PreviousResults from "../components/PreviousResults";
 const Wall = () => {
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndexQuestion, setCurrentIndexQuestion] = useState(0);
   const [points, setPoints] = useState(0);
   const [showResults, setShowResults] = useState(false);
+  const [showPreviousResults, setShowPreviousResults] = useState(false);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1);
@@ -31,6 +33,7 @@ const Wall = () => {
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) => prevIndex - 1);
   };
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     // Solicitud a la API para traer las preguntas
@@ -49,11 +52,19 @@ const Wall = () => {
   }, []);
 
   const user = localStorage.getItem("user").split("@");
-
+  console.log(user);
   return (
     <div className={styles.background}>
-      <Logout />
-      {showResults ? (
+      <NavBar
+        setShowPreviousResults={setShowPreviousResults}
+        showPreviousResults={showPreviousResults}
+      />
+      {showPreviousResults ? (
+        <PreviousResults
+          setShowPreviousResults={setShowPreviousResults}
+          handleGoBack={handleGoBack}
+        />
+      ) : showResults ? (
         <>
           <Results points={points} />
           <button className={styles.btnGoBack} onClick={handleGoBack}>
@@ -74,51 +85,60 @@ const Wall = () => {
                 contaminación y el calentamiento global hasta la sobrepoblación.
                 Recientemente, también hemos tenido que lidiar con una pandemia
                 de Covid-19. Justo cuando pensábamos que no podía empeorar,
-                aparecen los <strong className={styles.strongGreen}>ZOMBIS</strong>
+                aparecen los{" "}
+                <strong className={styles.strongGreen}>ZOMBIS</strong>
               </p>
               <button className={styles.buttons} onClick={handleNext}>
-                <img className = {styles.imageBtn} src={Next} alt="" />
+                <img className={styles.imageBtn} src={Next} alt="" />
                 Siguiente
               </button>
             </div>
           )}
           {currentIndex === 1 && (
             <div className={styles.container}>
-              <button className={styles.buttonsPrevious} onClick={handlePrevious}>
-              <img className = {styles.imageBtn} src={Previous} alt="" />
+              <button
+                className={styles.buttonsPrevious}
+                onClick={handlePrevious}
+              >
+                <img className={styles.imageBtn} src={Previous} alt="" />
                 Anterior
               </button>
               <p>
-                Imagina que estás tranquilo/a en casa, disfrutando de un tazón de
-                cereales con leche para el desayuno, cuando de repente, las
+                Imagina que estás tranquilo/a en casa, disfrutando de un tazón
+                de cereales con leche para el desayuno, cuando de repente, las
                 alarmas de la televisión se activan:
                 <br />
                 <strong>
-                &quot;HAY UN VIRUS INCONTROLABLE QUE TRANSFORMA A LOS INFECTADOS EN
-                  ZOMBIS&quot;
+                  &quot;HAY UN VIRUS INCONTROLABLE QUE TRANSFORMA A LOS
+                  INFECTADOS EN ZOMBIS&quot;
                 </strong>
-              </p>              
+              </p>
               <button className={styles.buttons} onClick={handleNext}>
-                <img className = {styles.imageBtn} src={Next} alt="" />
+                <img className={styles.imageBtn} src={Next} alt="" />
                 Siguiente
               </button>
             </div>
           )}
           {currentIndex === 2 && (
             <div className={styles.container}>
-              <button className={styles.buttonsPrevious} onClick={handlePrevious}>
-              <img className = {styles.imageBtn} src={Previous} alt="" />
+              <button
+                className={styles.buttonsPrevious}
+                onClick={handlePrevious}
+              >
+                <img className={styles.imageBtn} src={Previous} alt="" />
                 Anterior
               </button>
               <p>
                 Y piensas:{" "}
-                <strong>&quot;¡Por fin! El momento que tanto he esperado&quot;.</strong>{" "}
+                <strong>
+                  &quot;¡Por fin! El momento que tanto he esperado&quot;.
+                </strong>{" "}
                 Rápidamente, te asomas a la calle y ves el caos, personas
                 corriendo desesperadas y, detrás de ellas, los{" "}
                 <strong className={styles.strongGreen}>infectados.</strong>
               </p>
               <button className={styles.buttons} onClick={handleNext}>
-                <img className = {styles.imageBtn} src={Next} alt="" />
+                <img className={styles.imageBtn} src={Next} alt="" />
                 Siguiente
               </button>
             </div>
@@ -130,9 +150,9 @@ const Wall = () => {
                 lograrías sobrevivir?
               </p>
               <button className={styles.btnGo} onClick={handleNext}>
-                <GiRaiseZombie className={styles.icon}/>
-                  Averigüémoslo
-                <GiRaiseZombie className={styles.icon}/>
+                <GiRaiseZombie className={styles.icon} />
+                Averigüémoslo
+                <GiRaiseZombie className={styles.icon} />
               </button>
             </div>
           )}
@@ -152,6 +172,7 @@ const Wall = () => {
           )}
         </>
       )}
+      ;
     </div>
   );
 };

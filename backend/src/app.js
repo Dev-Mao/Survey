@@ -25,40 +25,19 @@ mongoose
     console.error("Error al conectar a la base de datos:", error);
   });
 
-// Endpoint para obtener todas las respuestas almacenadas
-app.get("/api/questions", isAuth, async (req, res) => {
-  try {
-    const questions = await Question.find({});
-    res.status(200).send({ questions });
-  } catch (error) {
-    res.status(500).send({ error: "Error al obtener las preguntas" });
-  }
-});
-
-// Endpoint para almacenar las respuestas de la encuesta
-app.post("/api/questions", isAuth, async (req, res) => {
-  try {
-    const { questionText, img, options } = req.body;
-    const newQuestion = new Question({ questionText, options, img, correct });
-    await newQuestion.save();
-    res.status(201).send({ message: "Pregunta almacenada exitosamente" });
-  } catch (error) {
-    res.status(500).send({ error: "Error al almacenar la pregunta" });
-  }
-});
-
 // Endpoint para crear usuario
 app.post("/api/signup", async (req, res) => {
   const user = new User({
     email: req.body.email,
     password: req.body.password,
+    results: [],
   });
   user
     .save()
     .then((savedUser) => {
       return res.status(200).send({
         token: service.createToken(savedUser),
-        userName: savedUser.email,
+        user: savedUser.email,
       });
     })
     .catch((error) => {
@@ -90,9 +69,69 @@ app.post("/api/login", async (req, res) => {
       user: user.email,
     });
   } catch (error) {
+    return res.status(500).send({ message: "Error al ingresar" });
+  }
+});
+
+// Endpoint para buscar un usuario
+app.get("/api/users/:email", isAuth, async (req, res) => {
+  const email = req.params.email;
+
+  try {
+    // Buscar al usuario por su correo electrónico
+    const user = await User.findOne({ email });
+    res.status(200).send({ user });
+  } catch (error) {
     return res
       .status(500)
-      .send({ message: 'Error al ingresar' });
+      .send({ message: `Error al obtener el usuario: ${error}` });
+  }
+});
+
+// Endpoint para editar usuario
+app.patch("/api/users/:email", isAuth, async (req, res) => {
+  const email = req.params.email;
+  const newResult = req.body.newResult; // El nuevo elemento que deseas agregar al arreglo
+
+  // Utilizar el operador $push para agregar el nuevo resultado al arreglo "results"
+  User.findOneAndUpdate(
+    { email },
+    { $push: { results: newResult } },
+    { new: true }
+  )
+    .then((userUpdate) => {
+      if (userUpdate) {
+        res.status(200).send({ user: userUpdate });
+      } else {
+        res.status(404).send({ message: "Usuario no encontrado." });
+      }
+    })
+    .catch((error) => {
+      return res
+        .status(500)
+        .send({ message: `Error al actualizar el usuario: ${error}` });
+    });
+});
+
+// Endpoint para obtener todas las respuestas almacenadas
+app.get("/api/questions", isAuth, async (req, res) => {
+  try {
+    const questions = await Question.find({});
+    res.status(200).send({ questions });
+  } catch (error) {
+    res.status(500).send({ error: "Error al obtener las preguntas" });
+  }
+});
+
+// Endpoint para almacenar las preguntas de la encuesta
+app.post("/api/questions", isAuth, async (req, res) => {
+  try {
+    const { questionText, img, options } = req.body;
+    const newQuestion = new Question({ questionText, options, img, correct });
+    await newQuestion.save();
+    res.status(201).send({ message: "Pregunta almacenada exitosamente" });
+  } catch (error) {
+    res.status(500).send({ error: "Error al almacenar la pregunta" });
   }
 });
 

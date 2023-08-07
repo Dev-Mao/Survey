@@ -1,10 +1,11 @@
-
-body{
+body {
     margin: 0;
     padding: 0;
 }
+
 .background {
-    height: 100vh;;
+    height: 100vh;
+    ;
     background-image: url('../assets/images/background3.png');
     background-size: cover;
     background-color: black;
@@ -12,7 +13,8 @@ body{
     align-items: center;
     justify-content: center;
 }
-.containerLogin{
+
+.containerLogin {
     height: 70%;
     max-width: 60%;
     padding: 0 10%;
@@ -22,23 +24,23 @@ body{
     justify-content: center;
     gap: 5%;
     background-color: rgb(56, 56, 56, 0.9);
-    box-shadow: 0px 0px 20px rgb(38, 225, 0,0.8);
+    box-shadow: 0px 0px 20px rgb(38, 225, 0, 0.8);
 }
 
-h1{
+h1 {
     font-family: 'Creepster', cursive;
     font-size: 2.5em;
     text-align: center;
     margin: 0;
 }
 
-.title{
+.title {
     color: rgb(0, 205, 0);
     text-shadow: 1px 2px 5px black;
 }
 
-@media (min-width: 860px){
-    .containerLogin{
+@media (min-width: 860px) {
+    .containerLogin {
         height: 70%;
         width: 25%;
         padding: 0px 5%;

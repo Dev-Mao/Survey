@@ -1,36 +1,50 @@
 .background {
-    height: 100vh;;
+    height: 100vh;
+    ;
     background-image: url('../assets/images/background5.jpg');
     background-size: cover;
     background-color: black;
     display: flex;
     flex-direction: column;
 }
-.containerCards{
+
+.containerCards {
     height: 89vh;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
-.btnLogout{
-    align-self: end;
-    margin: 20px;
-    width: 15%;
+
+.navBar {
+    display: flex;
+    justify-content: end;
+}
+
+.btnLogout, .btnPreviousResults {
+    margin: 10px 5px;
+    width: 20%;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding: 5px;
+    padding: 12px 8px;
     border-radius: 20px;
     background-color: black;
     color: rgb(45, 207, 0);
 }
-.btnLogout:hover{
+
+.btnPreviousResults {
+    width: 25%;
+}
+
+.btnLogout:hover {
     box-shadow: 1px 1px 3px rgb(38, 225, 0);
 }
-.container, .containerFinal{
+
+.container, .containerFinal {
     width: 60%;
     align-self: center;
     color: white;
@@ -41,9 +55,10 @@
     text-align: justify;
     font-size: 1.2rem;
     position: relative;
+    margin-top: 30px;
 }
 
-.buttons{
+.buttons {
     background-color: transparent;
     border: none;
     display: flex;
@@ -56,22 +71,26 @@
     margin-left: 20px;
     margin-left: 80%;
 }
-.buttons:hover{
+
+.buttons:hover {
     text-shadow: 1px 1px 1px rgb(38, 225, 0);
 }
-.btnGo{
+
+.btnGo {
+    align-self: center;
     background-color: transparent;
     border: none;
-    color:black;
+    color: black;
     display: flex;
     font-size: 1.8rem;
     font-family: 'Creepster', cursive;
     text-shadow: 1px 1px 1px rgb(38, 225, 0);
 }
-.btnGoBack{
+
+.btnGoBack {
     background-color: transparent;
     border: none;
-    color:black;
+    color: black;
     margin-top: 10px;
     font-size: 1.8rem;
     font-family: 'Creepster', cursive;
@@ -79,42 +98,52 @@
     text-shadow: 1px 1px 1px rgb(38, 225, 0);
 }
 
-
-.imageBtn{
-    width:100%;
+.imageBtn {
+    width: 100%;
 }
-strong{
+
+strong {
     font-family: 'Creepster', cursive;
     font-size: 1.3rem;
-    color:black;
+    color: black;
     text-shadow: 1px 1px 1px rgb(4, 219, 0);
 }
 
 
-.icon{
+.icon {
     font-size: 3rem;
     margin: 0 10px;
 }
-@media (min-width: 860px){
-    .container{
+
+@media (min-width: 860px) {
+    .container {
         flex-direction: row;
         padding: 2%;
     }
-    .containerFinal{
+
+    .containerFinal {
         align-items: center;
     }
-    .buttons{
+
+    .buttons {
         width: 15%;
         margin-left: 15px;
         align-items: center;
     }
-    .imageBtn{
-        width:100%;
+
+    .imageBtn {
+        width: 100%;
     }
-    .btnLogout{
-        width: 10%;        
+
+    .btnLogout {
+        width: 10%;
     }
-    .buttonsPrevious{
+
+    .btnPreviousResults {
+        width: 10%;
+    }
+
+    .buttonsPrevious {
         background-color: transparent;
         border: none;
         display: flex;
@@ -124,12 +153,12 @@ strong{
         font-weight: bold;
         font-size: 15px;
         align-items: start;
-        justify-content: center;         
+        justify-content: center;
     }
 }
 
-@media (max-width: 860px){
-    .buttonsPrevious{
+@media (max-width: 860px) {
+    .buttonsPrevious {
         background-color: transparent;
         border: none;
         display: flex;
@@ -139,9 +168,8 @@ strong{
         justify-content: end;
         align-items: start;
         position: absolute;
-        width: 17%;   
+        width: 17%;
         bottom: 5%;
         left: 7%;
     }
 }
-

@@ -1,0 +1,51 @@
+.containerTable {
+    width: 60%;
+    align-self: center;
+    color: white;
+    background-color: rgb(56, 56, 56, 0.9);
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: 30px;
+}
+
+.btnCloseHistory {
+    background-color: transparent;
+    border: none;
+    color: black;
+    margin-top: 10px;
+    font-size: 1.8rem;
+    font-family: 'Creepster', cursive;
+    align-self: center;
+    text-shadow: 1px 1px 1px rgb(38, 225, 0);
+}
+
+.table {
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 10px 20px;
+}
+
+.tableRow {
+    border-bottom: 1px solid white;
+    padding: 10px 20px;
+}
+
+.textEmptyResults {
+    align-self: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+td {
+    padding: 10px 0;
+}
+
+@media (min-width: 860px) {
+    .containerTable {
+        width: 30%;
+    }
+}

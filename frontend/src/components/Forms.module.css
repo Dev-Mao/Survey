@@ -1,21 +1,22 @@
-.form{
+.form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
 }
-.inputLoginContainer{
+
+.inputLoginContainer {
     display: flex;
     flex-direction: column;
     margin: 10px 0;
 }
 
-.errorMessage{
-    color :rgb(172, 56, 56);
-    margin:0;
+.errorMessage {
+    color: rgb(172, 56, 56);
+    margin: 0;
 }
 
-.input{
+.input {
     height: 40px;
     padding: 0 10px;
     background-color: rgb(255, 255, 255, 0);
@@ -25,32 +26,32 @@
 }
 
 .label {
-    font-size:.9rem;
+    font-size: .9rem;
     color: rgb(255, 255, 255);
 }
 
-.button{
+.button {
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
 }
 
-.button:hover{
+.button:hover {
     box-shadow: 1px 1px 5px rgb(38, 225, 0);
 }
 
-.span{
+.span {
     color: white;
     text-align: center;
 }
 
-.a{
+.a {
     text-decoration: none;
-    color:  rgb(38, 225, 0);
+    color: rgb(38, 225, 0);
     font-weight: bold;
 }
 
-.a:hover{
+.a:hover {
     text-shadow: 1px 1px 3px black;
 }

@@ -11,13 +11,14 @@
 
 ***
 ## 1. Introducción
-**¿Sobrevivirás?** es una página web interactiva que te permite descubrir si podrías sobrevivir a un apocalipsis zombi. Como usuario tienes la opción de iniciar sesión o registrarte para acceder al contenido completo y participar en el cuestionario. Si no se ha iniciado sesión, se limita el acceso a la pantalla principal.
+**¿Sobrevivirás?** es una página web interactiva que te permite descubrir si podrías sobrevivir a un apocalipsis zombi. Como usuario tienes la opción de iniciar sesión o registrarte para acceder al contenido completo, participar en el cuestionario las veces que quieras y también tendrás acceso al historial de resultados de todos tus intentos, así podrás llevar un control de qué tanto están mejorando tus habilidades para sobrevivir a un apocalipsisi zombie. (Si no se ha iniciado sesión, se limita el acceso a la pantalla principal)
 
 ## 2. Características
 * Registro e inicio de sesión de usuarios.
 * Navegación fluida entre las secciones de la página.
 * Cuestionario interactivo sobre la supervivencia en un apocalipsis zombi.
 * Visualización de resultados al finalizar las preguntas.
+* Historial de resultados.
 * Cierre de sesión.
 * Diseño responsivo
 
@@ -74,9 +75,6 @@ Ahora puedes disfrutar de **¿Sobrevivirás?** registrándote con tus datos, o s
 |invitado@gmail.com  |123456 |
 
 ## 5. Mejoras futuras
-
-* **Historial de Intentos**:
-Implementar un historial de intentos para cada usuario, ya que les permitirá realizar un seguimiento de sus resultados anteriores y ver cómo han mejorado sus capacidades para sobrevivir a un apocalipsis zombi a lo largo del tiempo. Para lograr esto, podría utilizar la base de datos para almacenar los resultados de cada intento.
 
 * **Mejora del diseño y amigabilidad**:
 El diseño y la amigabilidad de una aplicación son aspectos fundamentales para brindar una experiencia de usuario atractiva. El plan es estilizar la interfaz de usuario y hacerla más atractiva visualmente. Utilizando colores, iconos y elementos visuales que complementen la temática del apocalipsis zombi. Además, asegurarme de que la navegación sea sencilla y que los usuarios puedan encontrar fácilmente lo que están buscando.
