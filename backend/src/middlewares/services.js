@@ -1,22 +1,24 @@
 const jwt = require("jwt-simple");
 const moment = require("moment");
+require("dotenv").config();
+
+const secretKey = process.env.SECRET_KEY;
 
 //Crear token
 function createToken(user) {
   const payload = {
-    sub: user._id,
     iat: moment().unix(),
     exp: moment().add(7, "days").unix(),
   };
 
-  return jwt.encode(payload, "miclavedetokens");
+  return jwt.encode(payload, secretKey);
 }
 
 // Decodificar token
 function decodeToken(token) {
   const decoded = new Promise((resolve, reject) => {
     try {
-      const payload = jwt.decode(token, "miclavedetokens");
+      const payload = jwt.decode(token, secretKey);
 
       if (payload.exp <= moment().unix()) {
         reject({
@@ -28,7 +30,7 @@ function decodeToken(token) {
     } catch (err) {
       reject({
         status: 500,
-        message: "Invalid Token",
+        message: "Token inválido",
       });
     }
   });

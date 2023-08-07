@@ -17,6 +17,13 @@ const Wall = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1);
   };
 
+  const handleGoBack = () => {
+    setShowResults(false);
+    setCurrentIndex(0);
+    setCurrentIndexQuestion(0);
+    setPoints(0);
+  };
+
   const handleNextQuestion = () => {
     setCurrentIndexQuestion((prevIndex) => prevIndex + 1);
   };
@@ -47,7 +54,12 @@ const Wall = () => {
     <div className={styles.background}>
       <Logout />
       {showResults ? (
-        <Results points={points} />
+        <>
+          <Results points={points} />
+          <button className={styles.btnGoBack} onClick={handleGoBack}>
+            Volver al inicio
+          </button>
+        </>
       ) : (
         <>
           {currentIndex === 0 && (

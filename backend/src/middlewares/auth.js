@@ -1,6 +1,6 @@
-"use strict";
 const service = require("./services");
 
+// Función para verificar si un usuario está autenticado o no 
 function isAuth(req, res, next) {
   if (!req.headers.authorization) {
     return res.status(401).send({ message: "No tienes autorización" });
@@ -10,8 +10,7 @@ function isAuth(req, res, next) {
 
   service
     .decodeToken(token)
-    .then((payload) => {
-      req.user = payload.sub;
+    .then(() => {
       next();
     })
     .catch((response) => {

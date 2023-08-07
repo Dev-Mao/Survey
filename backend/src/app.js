@@ -39,7 +39,7 @@ app.get("/api/questions", isAuth, async (req, res) => {
 app.post("/api/questions", isAuth, async (req, res) => {
   try {
     const { questionText, img, options } = req.body;
-    const newQuestion = new Question({ questionText, options, img });
+    const newQuestion = new Question({ questionText, options, img, correct });
     await newQuestion.save();
     res.status(201).send({ message: "Pregunta almacenada exitosamente" });
   } catch (error) {
@@ -56,12 +56,10 @@ app.post("/api/signup", async (req, res) => {
   user
     .save()
     .then((savedUser) => {
-      return res
-        .status(200)
-        .send({
-          token: service.createToken(savedUser),
-          userName: savedUser.email,
-        });
+      return res.status(200).send({
+        token: service.createToken(savedUser),
+        userName: savedUser.email,
+      });
     })
     .catch((error) => {
       return res.status(500).send({ message: "Error al crear el usuario" });
@@ -72,7 +70,7 @@ app.post("/api/signup", async (req, res) => {
 app.post("/api/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email })
-      .select("_id email role +password")
+      .select("_id email +password")
       .exec();
 
     if (!user) {
@@ -86,17 +84,15 @@ app.post("/api/login", async (req, res) => {
     }
 
     const token = service.createToken(user);
-    return res
-      .status(200)
-      .send({
-        message: "Te has logueado correctamente",
-        token,
-        user: user.email,
-      });
+    return res.status(200).send({
+      message: "Te has logueado correctamente",
+      token,
+      user: user.email,
+    });
   } catch (error) {
     return res
       .status(500)
-      .send({ message: `Error al ingresar: ${error.message}` });
+      .send({ message: 'Error al ingresar' });
   }
 });
 

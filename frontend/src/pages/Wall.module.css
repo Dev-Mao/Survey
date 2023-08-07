@@ -54,12 +54,28 @@
     margin-left: 20px;
     margin-left: 80%;
 }
+.buttons:hover{
+    text-shadow: 1px 1px 1px rgb(38, 225, 0);
+}
 .btnGo{
     background-color: transparent;
     border: none;
     color:black;
-    font-size: 2rem;
+    display: flex;
+    font-size: 1.8rem;
     font-family: 'Creepster', cursive;
+}
+.btnGoBack{
+    background-color: transparent;
+    border: none;
+    color:black;
+    margin-top: 10px;
+    font-size: 1.8rem;
+    font-family: 'Creepster', cursive;
+    align-self: center;
+}
+.btnGoBack:hover{
+   text-shadow: 1px 1px 1px rgb(38, 225, 0);
 }
 
 .imageBtn{
