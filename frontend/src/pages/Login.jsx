@@ -6,7 +6,7 @@ const Login = () => {
         <>
             <div className={styles.background}>
                 <section className={styles.containerLogin}>
-                    <h1> ¡Bienvenido/a de nuevo!</h1>
+                    <h1 className={styles.title}> ¡Bienvenido/a de nuevo!</h1>
                     <LoginForm/>
                 </section>
             </div>

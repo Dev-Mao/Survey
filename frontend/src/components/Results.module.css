@@ -15,6 +15,11 @@
 .imgResult{
     max-height: 50%;
 }
+.titleResults{
+    margin-top: 15px;
+    color: rgb(0, 205, 0);
+    text-shadow: 1px 1px 5px black;
+}
 
 @media (min-width: 860px){
     .resultsContainer{ 

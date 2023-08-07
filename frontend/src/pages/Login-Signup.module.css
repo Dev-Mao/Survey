@@ -26,11 +26,15 @@ body{
 }
 
 h1{
-    color:rgb(30, 180, 0);
     font-family: 'Creepster', cursive;
     font-size: 2.5em;
     text-align: center;
     margin: 0;
+}
+
+.title{
+    color: rgb(0, 205, 0);
+    text-shadow: 1px 2px 5px black;
 }
 
 @media (min-width: 860px){

@@ -24,9 +24,11 @@
     gap: 5px;
     padding: 5px;
     border-radius: 20px;
+    background-color: black;
+    color: rgb(45, 207, 0);
 }
 .btnLogout:hover{
-    border: 3px solid rgb(38, 225, 0);
+    box-shadow: 1px 1px 3px rgb(38, 225, 0);
 }
 .container, .containerFinal{
     width: 60%;
@@ -64,6 +66,7 @@
     display: flex;
     font-size: 1.8rem;
     font-family: 'Creepster', cursive;
+    text-shadow: 1px 1px 1px rgb(38, 225, 0);
 }
 .btnGoBack{
     background-color: transparent;
@@ -73,10 +76,9 @@
     font-size: 1.8rem;
     font-family: 'Creepster', cursive;
     align-self: center;
+    text-shadow: 1px 1px 1px rgb(38, 225, 0);
 }
-.btnGoBack:hover{
-   text-shadow: 1px 1px 1px rgb(38, 225, 0);
-}
+
 
 .imageBtn{
     width:100%;
@@ -85,13 +87,9 @@ strong{
     font-family: 'Creepster', cursive;
     font-size: 1.3rem;
     color:black;
+    text-shadow: 1px 1px 1px rgb(4, 219, 0);
 }
-.btnGo:hover{
-    color:rgb(38, 225, 0);
-}
-.strongGreen{
-    color:rgb(38, 225, 0); 
-}
+
 
 .icon{
     font-size: 3rem;

@@ -74,7 +74,7 @@ const Wall = () => {
                 contaminación y el calentamiento global hasta la sobrepoblación.
                 Recientemente, también hemos tenido que lidiar con una pandemia
                 de Covid-19. Justo cuando pensábamos que no podía empeorar,
-                aparecen los <strong className={styles.strongGreen}>ZOMBIES</strong>
+                aparecen los <strong className={styles.strongGreen}>ZOMBIS</strong>
               </p>
               <button className={styles.buttons} onClick={handleNext}>
                 <img className = {styles.imageBtn} src={Next} alt="" />
@@ -95,7 +95,7 @@ const Wall = () => {
                 <br />
                 <strong>
                 &quot;HAY UN VIRUS INCONTROLABLE QUE TRANSFORMA A LOS INFECTADOS EN
-                  ZOMBIES&quot;
+                  ZOMBIS&quot;
                 </strong>
               </p>              
               <button className={styles.buttons} onClick={handleNext}>

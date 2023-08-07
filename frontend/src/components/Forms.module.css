@@ -37,8 +37,7 @@
 }
 
 .button:hover{
-    background-color: rgb(30, 183, 0);
-    transition: 0.1s;
+    box-shadow: 1px 1px 5px rgb(38, 225, 0);
 }
 
 .span{
@@ -50,4 +49,8 @@
     text-decoration: none;
     color:  rgb(38, 225, 0);
     font-weight: bold;
+}
+
+.a:hover{
+    text-shadow: 1px 1px 3px black;
 }

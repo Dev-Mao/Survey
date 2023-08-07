@@ -6,7 +6,7 @@ const Singup = () => {
         <>
             <div className={styles.background}>
                 <section className={styles.containerLogin}>
-                    <h1> ¿Primera vez por aquí? ¡Regístrate!</h1>
+                    <h1 className={styles.title}> ¿Primera vez por aquí? ¡Regístrate!</h1>
                     <SignupForm/>
                 </section>                
             </div>
