@@ -11,7 +11,7 @@ const NavBar = (props) => {
     // Remover el token y el role del usuario
     localStorage.removeItem("token");
     // Redirigir al inicio de sesión
-    navigate("/");
+    navigate("/");  
   };
 
   const handleShowPreviousResults = () => {
@@ -30,7 +30,7 @@ const NavBar = (props) => {
       )}
       <button className={styles.btnLogout} onClick={logout}>
         <RiLogoutBoxRLine className="navBar-icon" />
-        Logout
+        Logout 
       </button>
     </div>
   );

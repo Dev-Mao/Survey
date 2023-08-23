@@ -53,8 +53,8 @@ const PreviousResults = (props) => {
         className={styles.btnCloseHistory}
         onClick={handleHidePreviousResults}
       >
-        {" "}
-        Volver al inicio{" "}
+  
+        Volver al inicio
       </button>
     </>
   );

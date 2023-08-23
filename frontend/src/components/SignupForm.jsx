@@ -28,7 +28,6 @@ const SignupForm = () => {
             // Guardar datos en el localStorage
             localStorage.setItem("token", data.token);
             localStorage.setItem("user", data.user);
-            console.log(data.user);
             // Redirigir al muro cuando haya usuario
             navigate("/wall");
           });

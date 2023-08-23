@@ -52,7 +52,7 @@ const Wall = () => {
   }, []);
 
   const user = localStorage.getItem("user").split("@");
-  console.log(user);
+
   return (
     <div className={styles.background}>
       <NavBar
